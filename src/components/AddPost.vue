@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm" @reset="resetForm">
       <div>
         <label>Title</label>
         <input
@@ -25,6 +25,9 @@
       <div>
         <button name="submit" type="submit" class="btn btn-primary">
           Submit
+        </button>
+        <button name="reset" type="reset" class="btn btn-secondary">
+          Reset
         </button>
       </div>
     </form>
@@ -57,6 +60,11 @@ export default {
       this.post = post;
 
       this.redirectToPosts();
+    },
+
+    resetForm() {
+      this.post.title = "";
+      this.post.text = "";
     },
 
     redirectToPosts() {
