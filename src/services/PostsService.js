@@ -11,7 +11,11 @@ class PostsService {
 
   async getAll() {
     const { data } = await this.client.get("posts");
+    return data;
+  }
 
+  async getPost(id) {
+    const { data } = await this.client.get(`posts/${id}`);
     return data;
   }
 }
