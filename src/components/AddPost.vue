@@ -9,18 +9,20 @@
           placeholder="Title"
           type="text"
           required="required"
+          minlength="2"
           v-model="post.title"
         />
       </div>
       <div>
         <label>Content</label>
-        <input
+        <textarea
           id="text"
           name="text"
           placeholder="Your content here"
-          type="text"
+          maxlength="300"
           v-model="post.text"
-        />
+          required="required"
+        ></textarea>
       </div>
       <div>
         <button name="submit" type="submit" class="btn btn-primary">
@@ -87,5 +89,10 @@ div {
 input {
   width: 300px;
   height: 30px;
+}
+
+textarea {
+  width: 300px;
+  height: 100px;
 }
 </style>
