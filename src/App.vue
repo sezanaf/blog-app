@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <div id="nav"><router-link to="/">Posts</router-link> |</div>
+      <div id="nav">
+        <router-link to="/">Posts</router-link> |
+        <router-link class="nav-link" :to="{ name: 'add' }"
+          >Add Post</router-link
+        >
+      </div>
     </div>
     <router-view />
   </div>

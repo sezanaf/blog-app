@@ -11,17 +11,18 @@
 </template>
 
 <script>
-import { postsService } from "../services/PostsService";
+import postsService from "../services/PostsService";
+
 export default {
   data() {
     return {
-      data: {},
+      post: {},
     };
   },
 
   async created() {
-    const post = await postsService.getPost();
-    this.data = post;
+    const post = await postsService.getPost(this.$route.params.id);
+    this.post = post;
   },
 };
 </script>
